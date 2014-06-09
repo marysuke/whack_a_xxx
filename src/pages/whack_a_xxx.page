@@ -1,0 +1,76 @@
+<apex:page controller="whack_a_xxxController">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<title>xxたたき</title>
+<style>
+#battlefield{
+    background-color:white;
+}
+.enemies{
+    background-image:url("{!EnemyURL}");
+    height:64px;
+    width:64px;
+}
+.killed{
+    background-color: red;
+    height: 24px;
+    opacity: 0.5;
+    width: 44px;
+    font-size: large;
+    color: white;
+    padding: 20px 10px 20px 10px;
+}
+</style>
+<div id = "battlefield" />
+
+<a href="#">R-15 過激・暴力的な表現を含みます！</a>
+
+<script>
+$(function() {
+    var isSF1 = typeof sforce === 'undefined' ? false : true;
+    var fieldWidth, fieldHeight;
+    if(isSF1){
+        fieldWidth= innerWidth;
+        fieldHeight= innerHeight - 40;
+    }else{
+        fieldWidth = 516;
+        fieldHeight = 200;
+    }
+    
+  $('a').click(function() {
+    var enemy = 5;                //Bossの数
+    var killed = 0;                  // xxxしたBossの数
+    var st = new Date().getTime();  // 開始時間
+    $('#battlefield').empty();
+
+    // チェックボックスの新しい位置を返す。
+    function newPos() {
+      return {
+        left: Math.floor(Math.random() * fieldWidth),
+        top: Math.floor(Math.random() * fieldHeight)
+      };
+    }
+
+    // Bossの顔写真を追加
+    for (var i = 0; i < enemy; i++) {
+      $('<div class="enemies" alt="敵！" />')
+          .appendTo('#battlefield')
+          .css('position', 'absolute')
+          .css(newPos())
+          .each(function() {
+            $(this).animate(newPos(), 3000, arguments.callee);
+          });
+    }
+
+    // チェックボックスが押されたときの処理
+    $('.enemies').click(function() {
+        $(this).stop().attr('disabled', 'disabled');
+        $(this).append('<div class="killed">Bang!</div>');
+        var t = (new Date().getTime() - st) / 1000;
+        if (++killed >= enemy) alert('great!：' + t + '秒');
+    });
+
+    return false;
+  });
+});
+</script>
+</apex:page>
