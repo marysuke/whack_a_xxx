@@ -42,7 +42,7 @@ $(function() {
     var st = new Date().getTime();  // 開始時間
     $('#battlefield').empty();
 
-    // チェックボックスの新しい位置を返す。
+    // Bossの移動処理
     function newPos() {
       return {
         left: Math.floor(Math.random() * fieldWidth),
@@ -61,7 +61,7 @@ $(function() {
           });
     }
 
-    // チェックボックスが押されたときの処理
+    // Boss タップ時の処理
     $('.enemies').click(function() {
         $(this).stop().attr('disabled', 'disabled');
         $(this).append('<div class="killed">Bang!</div>');
