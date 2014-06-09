@@ -5,3 +5,5 @@ whack_a_xxx(xxxたたき！) salesforce1 にもゲームがあっていいじゃ
 　上司の画像をたたきまくるだけです。すっきりします！ しますよね！ 私だけじゃないですよね！？？
 　
 ![写真1](https://raw.githubusercontent.com/marysuke/whack_a_xxx/master/wiki/image/スクリーンショット\ 2014-06-09\ 17.49.23.png)  
+![写真1](https://raw.githubusercontent.com/marysuke/whack_a_xxx/master/wiki/image/スクリーンショット\ 2014-06-09\ 17.49.31.png)  
+![写真1](https://raw.githubusercontent.com/marysuke/whack_a_xxx/master/wiki/image/スクリーンショット\ 2014-06-09\ 17.49.52.png)  
